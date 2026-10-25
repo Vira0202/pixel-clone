@@ -3,192 +3,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pixel Clone 1.2 for Windows. Edit photos, clone details, crop, resize, prepare A4 layouts, add text and convert supported files.">
-  <title>Pixel Clone 1.2 — Your Everyday Image Editor</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1020;
-      color: #f7f8fc;
-      line-height: 1.7;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 7%;
-      border-bottom: 1px solid #252d43;
-    }
-    .logo { font-size: 23px; font-weight: 800; }
-    .version { color: #aabaff; font-size: 14px; }
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 95px 24px 75px;
-      text-align: center;
-    }
-    .eyebrow {
-      color: #aabaff;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-    h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.08;
-      margin: 20px 0;
-      letter-spacing: -2px;
-    }
-    h1 span { color: #9eafff; }
-    .intro {
-      max-width: 760px;
-      margin: 0 auto;
-      color: #c3c9d9;
-      font-size: 19px;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 13px 24px;
-      background: #7187ff;
-      color: #080d1a;
-      font-weight: bold;
-      border-radius: 9px;
-      text-decoration: none;
-    }
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 45px 24px 70px;
-    }
-    h2 { font-size: 32px; margin-bottom: 10px; }
-    .sub { color: #aeb7ca; margin-bottom: 30px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: #151d31;
-      border: 1px solid #2b3550;
-      border-radius: 14px;
-      padding: 24px;
-    }
-    .symbol { font-size: 27px; }
-    h3 { margin: 10px 0; font-size: 19px; }
-    .card p { color: #b9c2d5; margin-bottom: 0; }
-    .highlight {
-      margin-top: 35px;
-      padding: 35px;
-      text-align: center;
-      border-radius: 16px;
-      background: #151d31;
-      border: 1px solid #2b3550;
-    }
-    .highlight p { color: #b9c2d5; }
-    .status {
-      display: inline-block;
-      padding: 9px 15px;
-      background: #242e4b;
-      color: #dbe2ff;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    footer {
-      border-top: 1px solid #252d43;
-      text-align: center;
-      padding: 25px;
-      color: #8993aa;
-      font-size: 13px;
-    }
-    @media (max-width: 600px) {
-      header { padding: 18px; }
-      .hero { padding-top: 65px; }
-      .highlight { padding: 24px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pixel Clone 1.2 is a Windows photo editor with clone, crop, resize, text, A4 layout and Save as PDF tools.">
+<title>Pixel Clone 1.2 | Image Editing Made Simple</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b1020;color:#f5f6fc;line-height:1.7}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #293149}
+.logo{font-size:24px;font-weight:800;letter-spacing:-.5px}
+.version{color:#b6c2ff;font-size:14px}
+.hero{max-width:1100px;margin:auto;padding:90px 24px 75px}
+.tag{color:#aabaff;font-size:13px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.08;letter-spacing:-2px;margin:20px 0}
+h1 span{color:#9eafff}
+.intro{max-width:720px;font-size:19px;color:#c5ccdc}
+.button{display:inline-block;margin-top:24px;padding:12px 23px;background:#8295ff;color:#10152a;text-decoration:none;font-weight:bold;border-radius:8px}
+.section{max-width:1100px;margin:auto;padding:35px 24px 75px}
+h2{font-size:32px;line-height:1.2}
+.sub{color:#adb7cb;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#151d31;border:1px solid #2b3550;border-radius:14px;padding:24px}
+.symbol{font-size:28px;color:#aabaff}
+h3{font-size:19px;margin:8px 0}
+.card p{color:#b9c3d7;margin-bottom:0}
+.banner{margin-top:38px;padding:35px;text-align:center;background:linear-gradient(135deg,#192441,#211d3c);border:1px solid #354166;border-radius:16px}
+.banner p{color:#c2cbe0}
+.status{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:7px;background:#30395b;color:#e0e5ff;font-weight:bold}
+footer{padding:25px;text-align:center;border-top:1px solid #293149;color:#8994ab;font-size:13px}
+@media(max-width:600px){header{padding:18px}.hero{padding-top:60px}.banner{padding:24px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">Pixel Clone</div>
-    <div class="version">Version 1.2 · Windows</div>
-  </header>
+<header>
+  <div class="logo">Pixel Clone</div>
+  <div class="version">Version 1.2 · Windows</div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow">Your everyday image editor</div>
-      <h1>More tools.<br><span>More creative control.</span></h1>
-      <p class="intro">
-        Edit, retouch, crop, resize and prepare images with Pixel Clone 1.2.
-        From detailed cloning and custom text to A4 layouts and file conversion,
-        bring essential image tools together in one Windows application.
-      </p>
-      <a class="button" href="#features">Explore the features</a>
-    </section>
+<main>
+<section class="hero">
+  <div class="tag">Your everyday image editor</div>
+  <h1>Your Images.<br><span>Your Creative Control.</span></h1>
+  <p class="intro">
+    Edit, retouch and prepare images with Pixel Clone 1.2.
+    Bring essential photo editing tools together in one convenient
+    Windows desktop application — from precise cloning and creative
+    text to image resizing, A4 layouts and saving images as PDF.
+  </p>
+  <a class="button" href="#features">Explore the features ↓</a>
+</section>
 
-    <section class="section" id="features">
-      <h2>Everything you need, in one place</h2>
-      <p class="sub">
-        Practical tools for everyday photo editing and image preparation.
-      </p>
+<section class="section" id="features">
+  <h2>Powerful tools. Simple workflow.</h2>
+  <p class="sub">Practical features for everyday image editing and document preparation.</p>
 
-      <div class="grid">
-        <article class="card">
-          <div class="symbol">✦</div>
-          <h3>Clone & Retouch</h3>
-          <p>Copy details from one area of an image to another for precise retouching.</p>
-        </article>
+  <div class="grid">
+    <article class="card">
+      <div class="symbol">✦</div>
+      <h3>Clone & Retouch</h3>
+      <p>Copy image details from one area to another for controlled photo retouching.</p>
+    </article>
 
-        <article class="card">
-          <div class="symbol">▧</div>
-          <h3>Crop & Resize</h3>
-          <p>Adjust image framing and dimensions for your project or intended use.</p>
-        </article>
+    <article class="card">
+      <div class="symbol">▧</div>
+      <h3>Crop & Resize</h3>
+      <p>Adjust image framing and dimensions to fit your project.</p>
+    </article>
 
-        <article class="card">
-          <div class="symbol">▤</div>
-          <h3>A4 Layout</h3>
-          <p>Prepare images in an A4 layout for document and print-related work.</p>
-        </article>
+    <article class="card">
+      <div class="symbol">▤</div>
+      <h3>A4 Layout</h3>
+      <p>Arrange images in an A4 layout for document and print-related work.</p>
+    </article>
 
-        <article class="card">
-          <div class="symbol">T</div>
-          <h3>Text Editor</h3>
-          <p>Add and position text, choose fonts, colours and sizes, use bold or italic styling, and rotate text.</p>
-        </article>
+    <article class="card">
+      <div class="symbol">T</div>
+      <h3>Creative Text</h3>
+      <p>Add and move text, choose fonts, colours and sizes, apply bold or italic styling, and rotate text.</p>
+    </article>
 
-        <article class="card">
-          <div class="symbol">⌕</div>
-          <h3>Zoom & Detail</h3>
-          <p>Zoom in for fine adjustments and navigate around your image while editing.</p>
-        </article>
+    <article class="card">
+      <div class="symbol">⌕</div>
+      <h3>Precision Zoom</h3>
+      <p>Zoom in for detailed editing and navigate around your image with greater control.</p>
+    </article>
 
-        <article class="card">
-          <div class="symbol">⇄</div>
-          <h3>File Conversion</h3>
-          <p>Convert images to PDF and other file formats supported by the application.</p>
-        </article>
-      </div>
+    <article class="card">
+      <div class="symbol">PDF</div>
+      <h3>Save as PDF</h3>
+      <p>Save your edited image as a PDF document for sharing and document use.</p>
+    </article>
+  </div>
 
-      <div class="highlight">
-        <h2>Meet Pixel Clone 1.2</h2>
-        <p>
-          A Windows desktop application designed to make image editing
-          straightforward, practical and accessible.
-        </p>
-        <div class="status">Purchase and download details coming soon</div>
-      </div>
-    </section>
-  </main>
+  <div class="banner">
+    <h2>Make more of every image.</h2>
+    <p>
+      From photo retouching to text designs and PDF files,
+      Pixel Clone 1.2 puts useful tools at your fingertips.
+    </p>
+    <div class="status">Purchase and download details coming soon</div>
+  </div>
+</section>
+</main>
 
-  <footer>
-    Pixel Clone 1.2 · Windows Image Editing Software
-  </footer>
+<footer>Pixel Clone 1.2 · Windows Image Editing Software</footer>
 </body>
 </html>
 ```
