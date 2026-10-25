@@ -1,77 +1,115 @@
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pixel Clone 1.2 is a Windows photo editing application featuring clone and text tools.">
-  <title>Pixel Clone 1.2 | Photo Editing for Windows</title>
+  <meta name="description" content="Pixel Clone 1.2 for Windows. Edit photos, clone details, crop, resize, prepare A4 layouts, add text and convert supported files.">
+  <title>Pixel Clone 1.2 — Your Everyday Image Editor</title>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #10131c;
-      color: #f4f5f9;
-      line-height: 1.6;
+      background: #0b1020;
+      color: #f7f8fc;
+      line-height: 1.7;
     }
     header {
-      padding: 24px 8%;
-      border-bottom: 1px solid #292d3a;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 22px 7%;
+      border-bottom: 1px solid #252d43;
     }
-    .logo { font-size: 23px; font-weight: bold; }
-    .version { color: #aab4ff; font-size: 14px; }
-    main {
-      max-width: 1000px;
+    .logo { font-size: 23px; font-weight: 800; }
+    .version { color: #aabaff; font-size: 14px; }
+    .hero {
+      max-width: 1100px;
       margin: auto;
-      padding: 85px 24px;
+      padding: 95px 24px 75px;
+      text-align: center;
     }
-    .tag {
-      color: #aab4ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .eyebrow {
+      color: #aabaff;
       font-size: 13px;
       font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
     h1 {
-      font-size: clamp(42px, 7vw, 72px);
+      font-size: clamp(42px, 7vw, 76px);
       line-height: 1.08;
       margin: 20px 0;
+      letter-spacing: -2px;
     }
-    h1 span { color: #aab4ff; }
+    h1 span { color: #9eafff; }
     .intro {
-      color: #c0c4d0;
-      max-width: 650px;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #c3c9d9;
       font-size: 19px;
     }
-    .panel {
-      margin-top: 45px;
-      padding: 30px;
-      border: 1px solid #34394b;
-      border-radius: 18px;
-      background: #191d29;
-    }
-    h2 { margin-top: 0; font-size: 27px; }
-    ul { padding-left: 22px; color: #d5d8e2; }
-    li { margin: 12px 0; }
-    .notice {
+    .button {
       display: inline-block;
-      margin-top: 18px;
-      padding: 12px 18px;
+      margin-top: 28px;
+      padding: 13px 24px;
+      background: #7187ff;
+      color: #080d1a;
+      font-weight: bold;
+      border-radius: 9px;
+      text-decoration: none;
+    }
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 24px 70px;
+    }
+    h2 { font-size: 32px; margin-bottom: 10px; }
+    .sub { color: #aeb7ca; margin-bottom: 30px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #151d31;
+      border: 1px solid #2b3550;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .symbol { font-size: 27px; }
+    h3 { margin: 10px 0; font-size: 19px; }
+    .card p { color: #b9c2d5; margin-bottom: 0; }
+    .highlight {
+      margin-top: 35px;
+      padding: 35px;
+      text-align: center;
+      border-radius: 16px;
+      background: #151d31;
+      border: 1px solid #2b3550;
+    }
+    .highlight p { color: #b9c2d5; }
+    .status {
+      display: inline-block;
+      padding: 9px 15px;
+      background: #242e4b;
+      color: #dbe2ff;
       border-radius: 8px;
-      background: #292d43;
-      color: #dce0ff;
       font-weight: bold;
     }
     footer {
-      border-top: 1px solid #292d3a;
-      padding: 25px;
+      border-top: 1px solid #252d43;
       text-align: center;
-      color: #9298aa;
+      padding: 25px;
+      color: #8993aa;
       font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header { padding: 18px; }
+      .hero { padding-top: 65px; }
+      .highlight { padding: 24px; }
     }
   </style>
 </head>
@@ -82,36 +120,74 @@
   </header>
 
   <main>
-    <div class="tag">Simple photo editing</div>
-    <h1>Make every pixel<br><span>count.</span></h1>
-    <p class="intro">
-      Pixel Clone is a Windows desktop photo editor designed
-      for practical image editing, cloning and adding text.
-    </p>
-
-    <section class="panel">
-      <h2>Tools for your images</h2>
-      <ul>
-        <li><strong>Clone tool</strong> — copy image details from one area to another.</li>
-        <li><strong>Text tool</strong> — add and position text on your image.</li>
-        <li><strong>Text styling</strong> — choose font, size and colour, with bold and italic options.</li>
-        <li><strong>Text rotation</strong> — rotate text to suit your design.</li>
-        <li><strong>Zoom and navigation</strong> — zoom in for detailed editing and move around your image.</li>
-      </ul>
+    <section class="hero">
+      <div class="eyebrow">Your everyday image editor</div>
+      <h1>More tools.<br><span>More creative control.</span></h1>
+      <p class="intro">
+        Edit, retouch, crop, resize and prepare images with Pixel Clone 1.2.
+        From detailed cloning and custom text to A4 layouts and file conversion,
+        bring essential image tools together in one Windows application.
+      </p>
+      <a class="button" href="#features">Explore the features</a>
     </section>
 
-    <section class="panel">
-      <h2>Pixel Clone 1.2</h2>
-      <p>
-        A Windows photo editing application for people who want
-        practical tools in a straightforward desktop interface.
+    <section class="section" id="features">
+      <h2>Everything you need, in one place</h2>
+      <p class="sub">
+        Practical tools for everyday photo editing and image preparation.
       </p>
-      <div class="notice">Purchase and download details coming soon</div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="symbol">✦</div>
+          <h3>Clone & Retouch</h3>
+          <p>Copy details from one area of an image to another for precise retouching.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">▧</div>
+          <h3>Crop & Resize</h3>
+          <p>Adjust image framing and dimensions for your project or intended use.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">▤</div>
+          <h3>A4 Layout</h3>
+          <p>Prepare images in an A4 layout for document and print-related work.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">T</div>
+          <h3>Text Editor</h3>
+          <p>Add and position text, choose fonts, colours and sizes, use bold or italic styling, and rotate text.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">⌕</div>
+          <h3>Zoom & Detail</h3>
+          <p>Zoom in for fine adjustments and navigate around your image while editing.</p>
+        </article>
+
+        <article class="card">
+          <div class="symbol">⇄</div>
+          <h3>File Conversion</h3>
+          <p>Convert images to PDF and other file formats supported by the application.</p>
+        </article>
+      </div>
+
+      <div class="highlight">
+        <h2>Meet Pixel Clone 1.2</h2>
+        <p>
+          A Windows desktop application designed to make image editing
+          straightforward, practical and accessible.
+        </p>
+        <div class="status">Purchase and download details coming soon</div>
+      </div>
     </section>
   </main>
 
   <footer>
-    Pixel Clone 1.2 · Windows photo editing application
+    Pixel Clone 1.2 · Windows Image Editing Software
   </footer>
 </body>
 </html>
